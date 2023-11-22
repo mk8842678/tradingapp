@@ -1,0 +1,34 @@
+* {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+}
+
+.Data-parent {
+     display: flex;
+     column-gap: 13px;
+}
+
+.select {
+     width: 193px;
+     border: 1px solid;
+     height: 39px;
+     font-size: 25px;
+     position: relative;
+}
+
+.select .dropdown {
+     width: 150px;
+     border: 1px solid;
+     height: 58px;
+     position: absolute;
+     margin-top: 6px;
+     display: none;
+}
+
+.city {
+     width: 193px;
+     border: 1px solid;
+     height: 39px;
+     font-size: 25px;
+}

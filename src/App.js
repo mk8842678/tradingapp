@@ -1,24 +1,28 @@
-import logo from './logo.svg';
 import './App.css';
+import Upstock from './Component/UPstock/UPstock';
+
+// import NewCrud from './Component/Newcurd/Newcrud';
+// import Tabcreate from './Component/Tabcreate/Tabcreate';
+// import Create from './Component/Creat/Creat';
+// import Crud from './Component/Crud/Crud';
+// import Data from './Component/Datajson/Data';
+// import Practice from './Startscss/Index';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      {/* <Create /> */}
+      {/* <Crud /> */}
+      {/* <Data /> */}
+      {/* <Practice /> */}
+      {/* <Tabcreate /> */}
+      {/* <NewCrud />  */}
+      <Upstock />
+
+
+
+    </>
   );
 }
 

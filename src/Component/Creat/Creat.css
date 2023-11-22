@@ -1,0 +1,66 @@
+* {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+}
+
+.inputField {
+     border: 2px solid;
+     width: 300px;
+     margin: 38px auto;
+     padding: 15px 34px;
+
+}
+
+.inputSection {
+     padding: 10px 0;
+}
+
+.inputSection input {
+     width: 225px;
+     height: 30px;
+}
+
+.inputField form button {
+     width: 70px;
+     height: 28px;
+     font-size: 18px;
+     margin-left: 70px;
+     margin-top: 12px;
+}
+
+table {
+     border: 2px solid;
+     border-collapse: collapse;
+     margin: -39px auto;
+}
+
+table thead tr th {
+     border: 2px solid;
+     text-align: center;
+     padding: 0 47px;
+
+}
+
+tbody tr td {
+     border: 2px solid;
+     text-align: center;
+     padding: 0 47px;
+     font-size: 18px;
+
+}
+
+tbody tr td button {
+     font-size: 19px;
+     width: 84px;
+     height: 26px;
+     margin-right: 8px;
+}
+
+.inputField button {
+     width: 70px;
+     height: 28px;
+     font-size: 18px;
+     margin-left: 70px;
+     margin-top: 12px;
+}

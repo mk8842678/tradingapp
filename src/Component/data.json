@@ -1,0 +1,42 @@
+[
+     {
+          "name": "India",
+          "value": "IN",
+          "cities": [
+               "Delhi",
+               "Mumbai",
+               "Kolkata",
+               "Chennai",
+               "Gujarat",
+               "Bengaluru"
+          ]
+     },
+     {
+          "name": "Pakistan",
+          "value": "PAK",
+          "cities": [
+               "Karanchi",
+               "Islamabad",
+               "Lahore",
+               "Peshawar"
+          ]
+     },
+     {
+          "name": "America",
+          "value": "USA",
+          "cities": [
+               "NewYork",
+               "Washingtone",
+               "Florida"
+          ]
+     },
+     {
+          "name": "England",
+          "value": "ENG",
+          "cities": [
+               "London",
+               "Oval",
+               "bermingham"
+          ]
+     }
+]
