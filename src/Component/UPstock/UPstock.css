@@ -116,8 +116,9 @@
      }
 
      .list ul li {
-          padding: 3px 0;
+          padding: 4px 0;
           height: 34px;
+          border: 1px solid;
      }
 
      .stock-parent {
