@@ -3,7 +3,7 @@ import Clicktab from "../Clicktab/Clicktab";
 import "./UPstock.css"
 import array from "../UPstock/db.json"
 import Typewriter from "typewriter-effect"
-import { logDOM } from "@testing-library/react";
+// import { logDOM } from "@testing-library/react";
 
 
 
@@ -12,16 +12,14 @@ const Upstock = () => {
      /////////
      const [data, setData] = useState("list1")
      const [wishdata, setwishdata] = useState([])
-     const [orderListid, setOrderListId] = useState([])
-     const [trade, setTrade] = useState(array[0])
+     const [orderListid, setorderlist] = useState([])
+     const [trade] = useState(array[0])
 
      const handeltab = (event) => {
           setData(event)
-          console.log(event);
      }
 
      const wishlistbtn = (id) => {
-          // debugger
           let remainData = wishdata.find((item) => item.id === id)
           let detail = trade.find((item) => item.id === id)
           if (remainData) {
@@ -30,20 +28,26 @@ const Upstock = () => {
                setwishdata(wishdata.concat(detail))
           }
      }
-     // console.log(wishdata);
+     const watchlist = (id) => {
+          let filterData = wishdata.filter((item) => item.id !== id)
+          setwishdata(filterData)
+     }
 
-
-     const addtocartbtn = (id) => {
-          let orderdata = orderListid.find((item) => item.id === id)
+     const orderlistbtn = (id) => {
+          let orderlist = orderListid.find((item) => item.id === id)
           let orderdetail = trade.find((item) => item.id === id)
-          if (orderdata) {
-               setOrderListId(orderListid.filter((item) => item.id !== id))
+          if (orderlist) {
+               setorderlist(orderListid.filter((item) => item.id !== id))
           } else {
-               setOrderListId(orderListid.concat(orderdetail))
+               setorderlist(orderListid.concat(orderdetail))
           }
      }
-     console.log(orderListid);
-     ////
+
+     const watchorderlistbtn = (id) => {
+          let filterData = orderListid.filter((item) => item.id !== id)
+          setorderlist(filterData)
+
+     }
 
      return (
           <>
@@ -61,7 +65,6 @@ const Upstock = () => {
                                         typeSpeed: 200,
                                         deleteSpeed: 80,
                                    }}
-
                               />
                          </h2>
                     </div>
@@ -72,7 +75,7 @@ const Upstock = () => {
                     </div>
                     <div className="tablist1">
                          {data === "list1" && (
-                              array[0].map((item, i) => {
+                              array[0]?.map((item, i) => {
                                    return (
                                         <>
                                              <div className="stock" key={item.id}>
@@ -82,7 +85,7 @@ const Upstock = () => {
                                                   </div>
                                                   <div className="action">
                                                        <button onClick={() => wishlistbtn(item.id)} className={wishdata.find((ind) => ind.id === item.id) ? "activea" : ""}><i className="fa-solid fa-heart"></i></button>
-                                                       <button onClick={() => addtocartbtn(item.id)} className={orderListid.find((ind) => ind.id === item.id) ? "activea" : ""} ><i className="fa-solid fa-cart-shopping"></i></button>
+                                                       <button onClick={() => orderlistbtn(item.id)} className={orderListid.find((ind) => ind.id === item.id) ? "activea" : ""}><i className="fa-solid fa-cart-shopping"></i></button>
                                                   </div>
                                                   <div className="price">
                                                        <p>₹{item.stockPrice}</p>
@@ -97,7 +100,7 @@ const Upstock = () => {
                     </div >
                     <div className="tablist2">
                          {data === "list2" && (
-                              wishdata.map((item) => {
+                              wishdata?.map((item) => {
                                    return (
                                         <>
                                              <div className="stock" key={item.id}>
@@ -106,7 +109,7 @@ const Upstock = () => {
                                                        <p>{item.stockExchange}</p>
                                                   </div>
                                                   <div className="action">
-                                                       <button style={{ color: "red" }} onClick={() => wishlistbtn(item.id)}><i className="fa-solid fa-heart"></i></button>
+                                                       <button style={{ color: "red" }} onClick={() => watchlist(item.id)}><i className="fa-solid fa-heart"></i></button>
                                                        <button><i className="fa-solid fa-cart-shopping"></i></button>
                                                   </div>
                                                   <div className="price">
@@ -121,7 +124,7 @@ const Upstock = () => {
                     </div>
                     <div className="tablist3">
                          {data === "list3" && (
-                              orderListid.map((item) => {
+                              orderListid?.map((item) => {
                                    return (
                                         <>
                                              <div className="stock">
@@ -130,8 +133,8 @@ const Upstock = () => {
                                                        <p>{item.stockExchange}</p>
                                                   </div>
                                                   <div className="action">
-                                                       <button onClick={() => wishlistbtn(item.id)}><i className="fa-solid fa-heart"></i></button>
-                                                       <button style={{ color: "red" }}><i className="fa-solid fa-cart-shopping"></i></button>
+                                                       <button><i className="fa-solid fa-heart"></i></button>
+                                                       <button onClick={() => watchorderlistbtn(item.id)} style={{ color: "red" }}><i className="fa-solid fa-cart-shopping"></i></button>
                                                   </div>
                                                   <div className="price">
                                                        <p>₹{item.stockPrice}</p>
